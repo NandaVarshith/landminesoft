@@ -1,0 +1,347 @@
+
+    :root {
+      /* Enterprise Depth Color System */
+      --bg-main: #070B14;        /* deepest navy */
+      --bg-elevated: #0B1220;    /* hero layer */
+      --bg-card: #0F172A;        /* cards */
+      --bg-soft: #111827;        /* inner surfaces */
+
+      --border-subtle: #1E293B;  /* quiet dividers */
+      --border-strong: #243044;  /* emphasis */
+
+      --text-main: #F8FAFC;      /* headings */
+      --text-secondary: #C7D2E0; /* body */
+      --text-muted: #8B9BB4;     /* labels */
+
+      --brand-green: #2FBF8F;    /* refined, desaturated */
+      --brand-green-light: #d1e2d8; /* lighter accent for cards */
+      --brand-orange: #D97706;   /* warm amber */
+      --brand-blue: #1D4ED8;     /* authority blue */
+
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+    }
+
+
+    /* Main Navigation */
+    .main-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 0;
+      border-bottom: 1px solid rgba(30, 41, 59, 0.5); /* var(--border-subtle) but a bit more transparent for this context */
+    }
+
+    .logo {
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+      display: flex;
+      align-items: center;
+    }
+    .logo:hover {
+      opacity: 0.9;
+    }
+
+    .logo img {
+      height: 75px;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-nav ul a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.2s ease;
+      position: relative;
+      padding-bottom: 8px; /* space for the underline */
+    }
+
+    .main-nav ul a:hover {
+      color: var(--text-main);
+    }
+
+    .main-nav ul a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--brand-green);
+      transition: width 0.3s ease-out;
+    }
+
+    .main-nav ul a:hover::after {
+      width: 100%;
+    }
+
+
+    /* HERO */
+    header {
+      padding-bottom: 80px;
+      background:
+      linear-gradient(180deg, #070B14 0%, #0B1220 60%, #0F172A 100%),
+      radial-gradient(circle at top right, rgba(29,78,216,0.18), transparent 45%),
+      radial-gradient(circle at bottom left, rgba(47,191,143,0.14), transparent 45%);
+    }
+
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 3rem);
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.2;
+      font-weight: 500;
+    }
+
+    header h1 span {
+      color: var(--brand-green);
+    }
+
+    header p {
+      margin-top: 20px;
+      max-width: 650px;
+      margin-inline: auto;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+
+    .hero-content-wrapper {
+      padding-top: 80px;
+      text-align: center;
+    }
+
+    .cta {
+      padding: 16px 40px;
+      background: linear-gradient(135deg, var(--brand-orange), #F59E0B);
+      color: #0B1220;
+      border: none;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(245,158,11,0.35);
+    }
+
+    .cta-secondary {
+      padding: 12px 24px;
+      background: linear-gradient(180deg, rgba(15,23,42,0.9), rgba(17,24,39,0.9));
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cta-secondary:hover {
+      background: linear-gradient(180deg, rgba(30,41,59,0.9), rgba(51,65,85,0.9));
+      border-color: var(--border-strong);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    }
+
+    .cta-secondary svg { width: 1.1em; height: 1.1em; transition: transform 0.25s ease; }
+    .cta-secondary:hover svg { transform: translateX(4px); }
+
+    /* SECTION */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    section h2 span {
+      color: var(--brand-green);
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--bg-card), var(--bg-soft));
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 30px;
+      transition: all 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(58, 104, 89, 0.5);
+      box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 0 20px rgba(47, 128, 101, 0.3);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--brand-green-light);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #020617;
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    footer span {
+      color: var(--brand-green);
+      font-weight: 500;
+    }
+
+    /* WHY LANDMINE SOFT BUBBLES */
+    .why-landmine {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center; /* Vertically align bubbles for a balanced look */
+      gap: 40px; /* Increased gap for larger bubbles */
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      position: relative;
+    }
+
+    .bubble {
+      position: relative;
+      --tx: 0px;
+      --ty: 0px;
+      --rs: 0deg;
+      /* Removed background and backdrop-filter for a transparent soap-bubble effect */
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+      min-width: 160px;
+      max-width: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: var(--text-secondary); /* Softer text for better blend */
+      /* Removed inset shadow, softened outer shadow for a lighter feel */
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+      transition: all 0.3s ease;
+      animation: float 5s ease-in-out infinite;
+      transform: translate3d(var(--tx), var(--ty), 0) rotate(var(--rs));
+      will-change: transform;
+    }
+
+    .bubble::before {
+      content: "";
+      position: absolute;
+      top: 15%;
+      left: 15%;
+      width: 50%;
+      height: 50%;
+      border-radius: 50%;
+      /* A sharper, brighter primary reflection for a "shiny" look */
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.267), transparent 50%);
+      opacity: 0.9;
+      filter: blur(3px);
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .bubble::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      /* A subtle white rim light instead of color, for a clean look */
+      background: linear-gradient(135deg, transparent 60%, rgba(255,255,255,0.05) 80%, transparent);
+      pointer-events: none;
+    }
+
+    .bubble:hover {
+      transform: translate3d(var(--tx), var(--ty), 0) rotate(var(--rs)) translateY(-10px) scale(1.03);
+      /* Simply increase the outer shadow and border opacity */
+      box-shadow: 0 22px 50px rgba(0,0,0,0.4);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-25px); } /* Increased float distance for more momentum */
+    }
+
+    /* A generic wrapper for consistent max-width and padding */
+    .content-wrapper {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+ 
+    /* Generic subtitle for sections */
+    .section-subtitle {
+      text-align: center;
+      max-width: 650px;
+      margin-inline: auto;
+      margin-top: -25px;
+      margin-bottom: 50px;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .main-nav {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .main-nav ul {
+        gap: 25px;
+        padding-bottom: 20px;
+      }
+      .hero-content-wrapper {
+        padding-top: 40px;
+      }
+      header {
+        padding-bottom: 60px;
+      }
+    }

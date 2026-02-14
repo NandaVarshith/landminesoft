@@ -5,348 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landmine Soft – Think Big Demo</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      /* Enterprise Depth Color System */
-      --bg-main: #070B14;        /* deepest navy */
-      --bg-elevated: #0B1220;    /* hero layer */
-      --bg-card: #0F172A;        /* cards */
-      --bg-soft: #111827;        /* inner surfaces */
-
-      --border-subtle: #1E293B;  /* quiet dividers */
-      --border-strong: #243044;  /* emphasis */
-
-      --text-main: #F8FAFC;      /* headings */
-      --text-secondary: #C7D2E0; /* body */
-      --text-muted: #8B9BB4;     /* labels */
-
-      --brand-green: #2FBF8F;    /* refined, desaturated */
-      --brand-green-light: #d1e2d8; /* lighter accent for cards */
-      --brand-orange: #D97706;   /* warm amber */
-      --brand-blue: #1D4ED8;     /* authority blue */
-
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-main);
-      color: var(--text-main);
-    }
-
-
-    /* Main Navigation */
-    .main-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 25px 0;
-      border-bottom: 1px solid rgba(30, 41, 59, 0.5); /* var(--border-subtle) but a bit more transparent for this context */
-    }
-
-    .logo {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--text-main);
-      text-decoration: none;
-      transition: opacity 0.2s ease;
-    }
-    .logo:hover {
-      opacity: 0.9;
-    }
-
-    .logo span {
-      color: var(--brand-green);
-    }
-
-    .main-nav ul {
-      list-style: none;
-      display: flex;
-      gap: 40px;
-      margin: 0;
-      padding: 0;
-    }
-
-    .main-nav ul a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      transition: color 0.2s ease;
-      position: relative;
-      padding-bottom: 8px; /* space for the underline */
-    }
-
-    .main-nav ul a:hover {
-      color: var(--text-main);
-    }
-
-    .main-nav ul a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 2px;
-      background: var(--brand-green);
-      transition: width 0.3s ease-out;
-    }
-
-    .main-nav ul a:hover::after {
-      width: 100%;
-    }
-
-
-    /* HERO */
-    header {
-      padding-bottom: 80px;
-      background:
-      linear-gradient(180deg, #070B14 0%, #0B1220 60%, #0F172A 100%),
-      radial-gradient(circle at top right, rgba(29,78,216,0.18), transparent 45%),
-      radial-gradient(circle at bottom left, rgba(47,191,143,0.14), transparent 45%);
-    }
-
-    header h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      max-width: 900px;
-      margin: auto;
-      line-height: 1.2;
-    }
-
-    header h1 span {
-      color: var(--brand-green);
-    }
-
-    header p {
-      margin-top: 20px;
-      max-width: 650px;
-      margin-inline: auto;
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-    }
-
-    .hero-content-wrapper {
-      padding-top: 80px;
-      text-align: center;
-    }
-
-    .cta {
-      padding: 16px 40px;
-      background: linear-gradient(135deg, var(--brand-orange), #F59E0B);
-      color: #0B1220;
-      border: none;
-      border-radius: 14px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(245,158,11,0.35);
-    }
-
-    .cta-secondary {
-      padding: 12px 24px;
-      background: linear-gradient(180deg, rgba(15,23,42,0.9), rgba(17,24,39,0.9));
-      color: var(--text-main);
-      border: 1px solid var(--border-subtle);
-      border-radius: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      backdrop-filter: blur(6px);
-      transition: all 0.25s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .cta-secondary:hover {
-      background: linear-gradient(180deg, rgba(30,41,59,0.9), rgba(51,65,85,0.9));
-      border-color: var(--border-strong);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-    }
-
-    .cta-secondary svg { width: 1.1em; height: 1.1em; transition: transform 0.25s ease; }
-    .cta-secondary:hover svg { transform: translateX(4px); }
-
-    /* SECTION */
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 80px 20px;
-    }
-
-    section h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2.2rem;
-      margin-bottom: 50px;
-      text-align: center;
-    }
-
-    section h2 span {
-      color: var(--brand-green);
-    }
-
-    /* CARDS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
-    }
-
-    .card {
-      background: linear-gradient(180deg, var(--bg-card), var(--bg-soft));
-      border: 1px solid var(--border-subtle);
-      border-radius: 18px;
-      padding: 30px;
-      transition: all 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(58, 104, 89, 0.5);
-      box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 0 20px rgba(47, 128, 101, 0.3);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      font-family: 'Poppins', sans-serif;
-      color: var(--brand-green-light);
-    }
-
-    .card p {
-      color: var(--text-muted);
-      line-height: 1.65;
-      font-size: 0.95rem;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #020617;
-      padding: 40px 20px;
-      text-align: center;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    footer span {
-      color: var(--brand-green);
-      font-weight: 500;
-    }
-
-    /* WHY LANDMINE SOFT BUBBLES */
-    .why-landmine {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center; /* Vertically align bubbles for a balanced look */
-      gap: 40px; /* Increased gap for larger bubbles */
-      padding-top: 4rem;
-      padding-bottom: 4rem;
-      position: relative;
-    }
-
-    .bubble {
-      position: relative;
-      --tx: 0px;
-      --ty: 0px;
-      --rs: 0deg;
-      background:
-        radial-gradient(circle at 28% 25%, rgba(255,255,255,0.22), rgba(255,255,255,0.02) 30%, rgba(255,255,255,0.0) 60%),
-        radial-gradient(circle at 70% 75%, rgba(47,191,143,0.05), rgba(47,191,143,0.0) 60%),
-        linear-gradient(155deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015) 35%, rgba(255,255,255,0.0) 60%, rgba(255,255,255,0.02));
-      background-color: rgba(255,255,255,0.01);
-      backdrop-filter: blur(22px) saturate(120%);
-      -webkit-backdrop-filter: blur(22px) saturate(120%);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 50%;
-      /* Dynamic sizing based on content */
-      aspect-ratio: 1 / 1; /* Maintain a perfect circle */
-      min-width: 160px; /* Prevent bubbles from being too small */
-      max-width: 240px; /* Prevent bubbles from being too large */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem; /* More padding for better text spacing */
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      color: var(--text-main); /* Use theme color */
-      /* A more pronounced inner sheen and a deeper outer shadow for 3D effect */
-      box-shadow:
-        inset 0 10px 20px rgba(255, 255, 255, 0.08),
-        inset 0 -14px 28px rgba(0, 0, 0, 0.22),
-        0 16px 40px rgba(0,0,0,0.35);
-      transition: all 0.3s ease;
-      animation: float 5s ease-in-out infinite; /* base bob */
-      transform: translate3d(var(--tx), var(--ty), 0) rotate(var(--rs));
-      will-change: transform;
-    }
-
-    .bubble::before {
-      content: "";
-      position: absolute;
-      inset: 10%;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), rgba(255,255,255,0.12) 35%, rgba(255,255,255,0.0) 60%),
-        linear-gradient(120deg, rgba(255,255,255,0.12), rgba(255,255,255,0.0) 55%);
-      opacity: 0.7;
-      filter: blur(1px);
-      pointer-events: none;
-      mix-blend-mode: screen;
-    }
-
-    .bubble::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      background:
-        conic-gradient(from 220deg, rgba(255,255,255,0.0), rgba(255,255,255,0.14), rgba(255,255,255,0.0) 35%, rgba(255,255,255,0.10), rgba(255,255,255,0.0) 70%, rgba(255,255,255,0.06));
-      opacity: 0.45;
-      filter: blur(7px);
-      pointer-events: none;
-      mix-blend-mode: screen;
-    }
-
-    .bubble:hover {
-      transform: translate3d(var(--tx), var(--ty), 0) rotate(var(--rs)) translateY(-10px) scale(1.03);
-      /* Intensify the shadows and highlights on hover */
-      box-shadow:
-        inset 0 12px 24px rgba(255, 255, 255, 0.12),
-        inset 0 -16px 30px rgba(0, 0, 0, 0.26),
-        0 22px 50px rgba(0,0,0,0.45);
-      border-color: rgba(255, 255, 255, 0.30);
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); } /* Increased float distance */
-    }
-
-    @media (max-width: 768px) {
-      .main-nav {
-        flex-direction: column;
-        gap: 20px;
-      }
-      .main-nav ul {
-        gap: 25px;
-        padding-bottom: 20px;
-      }
-      .hero-content-wrapper {
-        padding-top: 40px;
-      }
-      header {
-        padding-bottom: 60px;
-      }
-    }
-
-
-  </style>
+  <link rel="stylesheet" href="./index.css" />
 </head>
 <body>
 
@@ -359,15 +18,16 @@
 
   <!-- Overlay for color harmony -->
   <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(7,11,20,0.65), rgba(11,18,32,0.75));z-index:1;"></div>
-
   <!-- Hero Content -->
   <div style="position:relative;z-index:2;max-width:1200px;margin:auto;padding:0 20px;">
     <nav class="main-nav">
-      <a href="#" class="logo">Landmine<span>Soft</span></a>
+      <a href="#" class="logo">
+        <img src="./resources/landminelogo-CMvDdIuP.png" alt="Landmine Soft Logo">
+      </a>
       <ul>
-        <li><a href="#about">About</a></li>
+        <li><a href="./about.html">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#careers">Careers</a></li>
+        <li><a href="careers2.html">Careers</a></li>
       </ul>
     </nav>
 
@@ -451,7 +111,7 @@
 </section>
 
 <!-- Services / Why Landmine Soft Section -->
-<section class="why-landmine" id="about">
+<section class="why-landmine">
   <!-- Bubble 1 -->
   <div class="bubble">Experienced, Focused Team</div>
   <!-- Bubble 2 -->
@@ -483,8 +143,8 @@
     if (!bubbles.length) return;
 
     const setRandomMotion = (el) => {
-      const maxX = 24;
-      const maxY = 28;
+      const maxX = 35; /* Increased from 24 for more horizontal movement */
+      const maxY = 40; /* Increased from 28 for more vertical movement */
       const maxR = 6;
       const tx = (Math.random() * 2 - 1) * maxX;
       const ty = (Math.random() * 2 - 1) * maxY;

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers | Landmine Soft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f9ff;
+      --bg-soft: #ffffff;
+      --card: #f2f6ff;
+      --text: #070b14;
+      --text-muted: #445574;
+      --border: #cdd8ea;
+      --primary: #0b1220;
+      --accent: #2fbf8f;
+      --primary-soft: rgba(11, 18, 32, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at 88% 8%, rgba(11, 18, 32, 0.08), transparent 35%),
+        radial-gradient(circle at 10% 78%, rgba(47, 191, 143, 0.07), transparent 32%),
+        var(--bg);
+      color: var(--text);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(11, 18, 32, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11, 18, 32, 0.07) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      right: -120px;
+      top: -140px;
+      background: radial-gradient(circle, rgba(11, 18, 32, 0.09), transparent 70%);
+      filter: blur(6px);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 88px 0 64px;
+    }
+
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 4.8vw, 3.6rem);
+      line-height: 1.1;
+      background: linear-gradient(90deg, var(--primary) 0%, #1b2f53 58%, rgba(27, 47, 83, 0.58) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      margin: 0 auto;
+      max-width: 740px;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    .section {
+      padding: 36px 0 22px;
+    }
+
+    .section h2 {
+      margin: 0 0 18px;
+      font-size: 1.8rem;
+      letter-spacing: 0.2px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .value-card {
+      background: linear-gradient(180deg, var(--bg-soft), var(--card));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .value-id {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 0.76rem;
+      letter-spacing: 1.1px;
+      font-weight: 700;
+    }
+
+    .value-card p {
+      margin: 0;
+      line-height: 1.6;
+      color: #243956;
+      font-size: 0.96rem;
+    }
+
+    .roles-header {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .roles-track {
+      margin-top: 18px;
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+      scrollbar-width: none;
+    }
+
+    .roles-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .role-card {
+      min-width: 300px;
+      max-width: 300px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, var(--bg-soft), var(--card));
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .role-card:hover {
+      border-color: rgba(47, 191, 143, 0.45);
+      box-shadow: 0 10px 24px rgba(11, 18, 32, 0.08);
+    }
+
+    .role-card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .role-card p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 0.95rem;
+      min-height: 68px;
+    }
+
+    .meta {
+      color: #243956;
+      font-size: 0.88rem;
+    }
+
+    .apply-btn {
+      margin-top: auto;
+      border: 1px solid var(--primary);
+      border-radius: 10px;
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 700;
+      padding: 10px 14px;
+      cursor: pointer;
+    }
+
+    .apply-btn:hover {
+      background: #101a2d;
+      border-color: var(--accent);
+    }
+
+    .footer-cta {
+      padding: 54px 0 80px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .footer-cta a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 760px) {
+      .controls {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>Build the Future With Us</h1>
+      <p>
+        Join a focused team of builders, designers, and engineers creating useful digital products with modern
+        technology and strong execution standards.
+      </p>
+    </section>
+
+    <section class="section" id="why-us">
+      <h2>Why work with us?</h2>
+      <div class="values-grid">
+        <article class="value-card">
+          <span class="value-id">VALUE 01</span>
+          <p>Real project ownership from day one, with direct impact on production features and client outcomes.</p>
+        </article>
+        <article class="value-card">
+          <span class="value-id">VALUE 02</span>
+          <p>Modern stack across React, Java/Spring, Python, cloud platforms, and practical AI tooling.</p>
+        </article>
+        <article class="value-card">
+          <span class="value-id">VALUE 03</span>
+          <p>Mentorship from experienced engineers who review thoughtfully and help you grow with intent.</p>
+        </article>
+        <article class="value-card">
+          <span class="value-id">VALUE 04</span>
+          <p>Clear growth paths, measurable goals, and regular feedback that supports fast, sustainable progress.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="open-roles">
+      <div class="roles-header">
+        <h2>Open Roles</h2>
+        <div class="controls">
+          <button class="icon-btn" id="leftBtn" aria-label="Scroll left">&lt;</button>
+          <button class="icon-btn" id="rightBtn" aria-label="Scroll right">&gt;</button>
+        </div>
+      </div>
+
+      <div class="roles-track" id="rolesTrack">
+        <article class="role-card">
+          <h3>Frontend Engineer</h3>
+          <p>Build scalable, high-performance web applications with robust UI architecture and clean implementation.</p>
+          <div class="meta">Remote | Full Time</div>
+          <button class="apply-btn">Apply Now</button>
+        </article>
+
+        <article class="role-card">
+          <h3>UI/UX Designer</h3>
+          <p>Design intuitive and elegant user journeys aligned with product strategy and measurable user outcomes.</p>
+          <div class="meta">Hybrid | Full Time</div>
+          <button class="apply-btn">Apply Now</button>
+        </article>
+
+        <article class="role-card">
+          <h3>Backend Engineer</h3>
+          <p>Develop secure APIs and resilient distributed systems that power our core product and integrations.</p>
+          <div class="meta">Remote | Full Time</div>
+          <button class="apply-btn">Apply Now</button>
+        </article>
+
+        <article class="role-card">
+          <h3>Product Manager</h3>
+          <p>Own roadmap priorities, coordinate cross-functional teams, and turn ideas into impactful releases.</p>
+          <div class="meta">Onsite | Full Time</div>
+          <button class="apply-btn">Apply Now</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="footer-cta">
+      Do not see your role yet? Send your resume to
+      <a href="mailto:careers@landminesoft.com">careers@landminesoft.com</a>.
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const track = document.getElementById("rolesTrack");
+      const leftBtn = document.getElementById("leftBtn");
+      const rightBtn = document.getElementById("rightBtn");
+      const scrollAmount = 320;
+
+      if (!track || !leftBtn || !rightBtn) return;
+
+      leftBtn.addEventListener("click", function () {
+        track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      });
+
+      rightBtn.addEventListener("click", function () {
+        track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
+    })();
+  </script>
+</body>
+</html>
