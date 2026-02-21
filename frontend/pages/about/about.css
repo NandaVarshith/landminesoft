@@ -1,0 +1,185 @@
+body:has(#team-scroller) {
+  --bg-main: #070b14;
+  --bg-elevated: #0b1220;
+  --bg-card: #0f172a;
+  --border: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #9ca3af;
+  --brand: #2fbf8f;
+  --glass: rgba(255, 255, 255, 0.04);
+}
+
+body:has(#team-scroller) * {
+  box-sizing: border-box;
+}
+
+body:has(#team-scroller) {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(47, 191, 143, 0.08), transparent 60%),
+    linear-gradient(180deg, #070b14, #0b1220);
+  color: var(--text-main);
+}
+
+body:has(#team-scroller) section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 20px;
+}
+
+body:has(#team-scroller) h1,
+body:has(#team-scroller) h2,
+body:has(#team-scroller) h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+body:has(#team-scroller) h1 span,
+body:has(#team-scroller) h2 span {
+  color: var(--brand);
+}
+
+body:has(#team-scroller) .hero {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body:has(#team-scroller) .hero-video {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+body:has(#team-scroller) .hero h1 {
+  font-size: clamp(2rem, 3.6vw, 2.6rem);
+  max-width: 900px;
+}
+
+body:has(#team-scroller) .hero p {
+  max-width: 720px;
+  margin-top: 22px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+body:has(#team-scroller) .split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  body:has(#team-scroller) .split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+body:has(#team-scroller) .label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.7rem;
+  color: var(--brand);
+  margin-bottom: 14px;
+}
+
+body:has(#team-scroller) .content p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+body:has(#team-scroller) .stat {
+  padding: 26px 28px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin-bottom: 18px;
+  backdrop-filter: blur(8px);
+}
+
+body:has(#team-scroller) .stat strong {
+  display: block;
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+body:has(#team-scroller) .stat span {
+  color: var(--text-muted);
+}
+
+body:has(#team-scroller) .team-card img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+body:has(#team-scroller) .team-card:hover img {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+body:has(#team-scroller) .team-scroller-wrapper {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+body:has(#team-scroller) #team-scroller {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body:has(#team-scroller) #team-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+body:has(#team-scroller) .scroll-btn {
+  position: absolute;
+  top: 48px;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+body:has(#team-scroller) .team-scroller-wrapper:hover .scroll-btn {
+  opacity: 0.7;
+}
+
+body:has(#team-scroller) .scroll-btn:hover {
+  opacity: 1;
+  background: rgba(51, 65, 85, 0.7);
+}
+
+body:has(#team-scroller) footer {
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+body:has(#team-scroller) footer span {
+  color: var(--brand);
+}

@@ -1,0 +1,112 @@
+.about-header {
+  --hdr-fg: #ffffff;
+  --hdr-border: rgba(255, 255, 255, 0.2);
+  --hdr-bg: rgba(255, 255, 255, 0.03);
+  --hdr-hover-border: rgba(47, 191, 143, 0.85);
+  --hdr-hover-bg: rgba(47, 191, 143, 0.14);
+  --hdr-focus: rgba(47, 191, 143, 0.9);
+  --hdr-menu-border: rgba(255, 255, 255, 0.18);
+  --hdr-menu-bg: rgba(11, 18, 32, 0.78);
+  --hdr-menu-link: #e5e7eb;
+
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: clamp(10px, 1.8vw, 18px) clamp(12px, 3vw, 28px) 0;
+  background: transparent;
+}
+
+.about-header--light {
+  --hdr-fg: #101929;
+  --hdr-border: rgba(16, 25, 41, 0.25);
+  --hdr-bg: rgba(255, 255, 255, 0.45);
+  --hdr-hover-border: rgba(47, 191, 143, 0.9);
+  --hdr-hover-bg: rgba(47, 191, 143, 0.18);
+  --hdr-focus: rgba(16, 25, 41, 0.8);
+  --hdr-menu-border: rgba(16, 25, 41, 0.2);
+  --hdr-menu-bg: rgba(255, 255, 255, 0.95);
+  --hdr-menu-link: #101929;
+}
+
+.about-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 44px;
+}
+
+.about-header-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.4vw, 14px);
+}
+
+.about-menu-wrap {
+  position: relative;
+}
+
+.about-icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--hdr-border);
+  background: var(--hdr-bg);
+  color: var(--hdr-fg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.about-icon-btn:hover {
+  border-color: var(--hdr-hover-border);
+  background: var(--hdr-hover-bg);
+  transform: translateY(-1px);
+}
+
+.about-icon-btn:focus-visible {
+  outline: 2px solid var(--hdr-focus);
+  outline-offset: 2px;
+}
+
+.about-icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.about-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 190px;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid var(--hdr-menu-border);
+  background: var(--hdr-menu-bg);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.about-menu a {
+  display: block;
+  color: var(--hdr-menu-link);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.about-menu a:hover {
+  background: rgba(47, 191, 143, 0.12);
+  color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .about-header {
+    padding: 10px 12px 0;
+  }
+}

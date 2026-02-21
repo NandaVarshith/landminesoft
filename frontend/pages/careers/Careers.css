@@ -1,0 +1,232 @@
+body:has(#rolesTrack) {
+  --bg: #f6f9ff;
+  --bg-soft: #ffffff;
+  --card: #f2f6ff;
+  --text: #131b31;
+  --text-muted: #445574;
+  --border: #cdd8ea;
+  --primary: #101929;
+  --accent: #2fbf8f;
+  --primary-soft: rgba(11, 18, 32, 0.08);
+}
+
+body:has(#rolesTrack) * {
+  box-sizing: border-box;
+}
+
+body:has(#rolesTrack) {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(11, 18, 32, 0.08), transparent 35%),
+    radial-gradient(circle at 10% 78%, rgba(61, 187, 145, 0.07), transparent 32%),
+    var(--bg);
+  color: var(--text);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body:has(#rolesTrack)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(11, 18, 32, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 18, 32, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -2;
+}
+
+body:has(#rolesTrack)::after {
+  content: "";
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  top: -140px;
+  background: radial-gradient(circle, rgba(11, 18, 32, 0.09), transparent 70%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+body:has(#rolesTrack) .container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+body:has(#rolesTrack) .hero {
+  text-align: center;
+  padding: 88px 0 64px;
+}
+
+body:has(#rolesTrack) .hero h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 4.8vw, 3.6rem);
+  line-height: 1.1;
+  background: linear-gradient(90deg, var(--primary) 0%, #1b2f53 58%, rgba(27, 47, 83, 0.58) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+body:has(#rolesTrack) .hero p {
+  margin: 0 auto;
+  max-width: 740px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+body:has(#rolesTrack) .section {
+  padding: 36px 0 22px;
+}
+
+body:has(#rolesTrack) .section h2 {
+  margin: 0 0 18px;
+  font-size: 1.8rem;
+  letter-spacing: 0.2px;
+}
+
+body:has(#rolesTrack) .values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+body:has(#rolesTrack) .value-card {
+  background: linear-gradient(180deg, var(--bg-soft), var(--card));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+body:has(#rolesTrack) .value-id {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 0.76rem;
+  letter-spacing: 1.1px;
+  font-weight: 700;
+}
+
+body:has(#rolesTrack) .value-card p {
+  margin: 0;
+  line-height: 1.6;
+  color: #243956;
+  font-size: 0.96rem;
+}
+
+body:has(#rolesTrack) .roles-header {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+body:has(#rolesTrack) .controls {
+  display: flex;
+  gap: 8px;
+}
+
+body:has(#rolesTrack) .icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+body:has(#rolesTrack) .icon-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+body:has(#rolesTrack) .roles-track {
+  margin-top: 18px;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  scrollbar-width: none;
+}
+
+body:has(#rolesTrack) .roles-track::-webkit-scrollbar {
+  display: none;
+}
+
+body:has(#rolesTrack) .role-card {
+  min-width: 300px;
+  max-width: 300px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--bg-soft), var(--card));
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body:has(#rolesTrack) .role-card:hover {
+  border-color: rgba(47, 191, 143, 0.45);
+  box-shadow: 0 10px 24px rgba(11, 18, 32, 0.08);
+}
+
+body:has(#rolesTrack) .role-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+body:has(#rolesTrack) .role-card p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  min-height: 68px;
+}
+
+body:has(#rolesTrack) .meta {
+  color: #243956;
+  font-size: 0.88rem;
+}
+
+body:has(#rolesTrack) .apply-btn {
+  margin-top: auto;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+body:has(#rolesTrack) .apply-btn:hover {
+  background: #101a2d;
+  border-color: var(--accent);
+}
+
+body:has(#rolesTrack) .footer-cta {
+  padding: 54px 0 80px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+body:has(#rolesTrack) .footer-cta a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  body:has(#rolesTrack) .controls {
+    display: none;
+  }
+}
