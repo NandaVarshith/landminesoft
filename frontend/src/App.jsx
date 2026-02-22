@@ -6,6 +6,8 @@ import About from '../pages/about/About.jsx';
 import Careers from '../pages/careers/Careers.jsx';
 import Consultation from '../pages/consultation/Consultation.jsx';
 import GetDemo from '../pages/getDemo/GetDemo.jsx';
+import Contact from '../pages/contact/Contact.jsx';
+import Support from '../pages/support/Support.jsx';
 // Corrected import path and component name
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
       <Route path="/careers" element={<Careers/>} />
       <Route path="/consultation" element={<Consultation/>} />
       <Route path="/get-demo" element={<GetDemo/>} />
+      <Route path="/contact" element={<Contact/>} />
+      <Route path="/support" element={<Support/>} />
      
     </Routes>
   )

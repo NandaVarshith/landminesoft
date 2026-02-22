@@ -1,10 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './HeaderDark.css';
 
 function HeaderDark({ variant = 'dark' }) {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
+  const location = useLocation();
+
+  const menuLinks = [
+    { to: '/about', label: 'About' },
+    { to: '/careers', label: 'Careers' },
+    { to: '/contact', label: 'Contact' },
+    { to: '/support', label: 'Support' },
+    { to: '/get-demo', label: 'Get a Demo' },
+  ];
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -27,6 +36,10 @@ function HeaderDark({ variant = 'dark' }) {
     };
   }, []);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
   return (
     <header className={`about-header about-header--${variant}`}>
       <div className="about-header-inner">
@@ -48,10 +61,18 @@ function HeaderDark({ variant = 'dark' }) {
             </button>
 
             {open && (
-              <nav id="about-header-menu" className="about-menu" aria-label="About actions">
-                <a href="/get-demo" onClick={() => setOpen(false)}>Get a Demo</a>
-                <a href="/contact.html" onClick={() => setOpen(false)}>Contact Us</a>
-                <a href="/support.html" onClick={() => setOpen(false)}>Support</a>
+              <nav id="about-header-menu" className="about-menu" aria-label="Site navigation">
+                <p className="about-menu-label">Navigate</p>
+                {menuLinks.map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    className={location.pathname === item.to ? 'is-active' : ''}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
               </nav>
             )}
           </div>

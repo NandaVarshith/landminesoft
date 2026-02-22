@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import './index.css'
 
 function HomePage() {
@@ -79,6 +80,7 @@ function HomePage() {
             <li><a href="/about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </nav>
 
@@ -96,11 +98,11 @@ function HomePage() {
           </p>
 
           <div style={{ marginTop: '44px', display: 'flex', justifyContent: 'center', gap: '18px', flexWrap: 'wrap' }}>
-            <button className="cta">Schedule a Free Consultation</button>
-            <button className="cta-secondary">
+            <Link to="/consultation" className="cta">Schedule a Free Consultation</Link>
+            <a href="#services" className="cta-secondary">
               View Our Projects
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" /></svg>
-            </button>
+            </a>
           </div>
 
           <div style={{ marginTop: '70px', display: 'flex', justifyContent: 'center', gap: '48px', flexWrap: 'wrap', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
@@ -173,14 +175,16 @@ function HomePage() {
       <div className="bubble">Business‑First Thinking</div>
     </section>
 
-    <section style={{ padding: '90px 20px', background: 'linear-gradient(180deg, #0B1220, #070B14)', textAlign: 'center' }}>
-      <h2 style={{ marginBottom: '20px' }}>READY TO <span>GET STARTED</span>?</h2>
-      <p style={{ maxWidth: '600px', margin: '0 auto 40px', color: 'var(--text-secondary)', fontSize: '1.05rem' }}>
-        Let’s discuss how Landmine Soft can help you build, scale, or optimize your next digital product.
-      </p>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '18px', flexWrap: 'wrap' }}>
-        <button className="cta">Get a Demo</button>
-        <button className="cta-secondary">Schedule Consultation</button>
+    <section className="ready-section">
+      <div className="content-wrapper ready-section-inner">
+        <h2 style={{ marginBottom: '20px' }}>READY TO <span>GET STARTED</span>?</h2>
+        <p style={{ maxWidth: '600px', margin: '0 auto 40px', color: 'var(--text-secondary)', fontSize: '1.05rem' }}>
+          Let’s discuss how Landmine Soft can help you build, scale, or optimize your next digital product.
+        </p>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '18px', flexWrap: 'wrap' }}>
+          <Link to="/get-demo" className="cta">Get a Demo</Link>
+          <Link to="/consultation" className="cta-secondary">Schedule Consultation</Link>
+        </div>
       </div>
     </section>
 
