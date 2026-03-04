@@ -1,22 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import './About.css';
 import HeaderDark from '../header/HeaderDark.jsx';
+import heroVideo from '../../assets/about_page.mp4';
 
 function About() {
   const scrollerRef = useRef(null);
   const scrollAmount = 270;
-
-  useEffect(() => {
-    const linkId = 'landminesoft-about-google-fonts';
-    if (document.getElementById(linkId)) return;
-
-    const link = document.createElement('link');
-    link.id = linkId;
-    link.rel = 'stylesheet';
-    link.href =
-      'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500&display=swap';
-    document.head.appendChild(link);
-  }, []);
 
   const scrollLeft = () => {
     if (scrollerRef.current) scrollerRef.current.scrollLeft -= scrollAmount;
@@ -26,12 +15,21 @@ function About() {
     if (scrollerRef.current) scrollerRef.current.scrollLeft += scrollAmount;
   };
 
+  useEffect(() => {
+    document.title = 'About | Landmine Soft';
+    document.body.classList.add('about-body');
+
+    return () => {
+      document.body.classList.remove('about-body');
+    };
+  }, []);
+
   return (
     <>
       <HeaderDark />
       <section className="hero">
         <video autoPlay loop muted playsInline className="hero-video">
-          <source src="resources/about_page.mp4" type="video/mp4" />
+          <source src={heroVideo} type="video/mp4" />
         </video>
         <h1>
           ABOUT <span>LANDMINE SOFT</span>
@@ -66,7 +64,7 @@ function About() {
               <span>Core engineers</span>
             </div>
             <div className="stat">
-              <strong>AI � Web � Cloud</strong>
+              <strong>AI - Web - Cloud</strong>
               <span>Primary tech focus</span>
             </div>
           </div>
@@ -187,4 +185,3 @@ function About() {
 }
 
 export default About;
-

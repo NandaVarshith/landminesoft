@@ -1,4 +1,4 @@
-body:has(#support-page) {
+body.support-body {
   --bg: #f5f8ff;
   --surface: #ffffff;
   --surface-soft: #edf3ff;
@@ -9,7 +9,7 @@ body:has(#support-page) {
   --accent: #1ea37e;
 }
 
-body:has(#support-page) {
+body.support-body {
   margin: 0;
   font-family: "Inter", sans-serif;
   background:
@@ -21,7 +21,7 @@ body:has(#support-page) {
   overflow-x: hidden;
 }
 
-body:has(#support-page)::before {
+body.support-body::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -33,7 +33,7 @@ body:has(#support-page)::before {
   z-index: -2;
 }
 
-body:has(#support-page)::after {
+body.support-body::after {
   content: "";
   position: fixed;
   width: 420px;
@@ -46,23 +46,23 @@ body:has(#support-page)::after {
   z-index: -1;
 }
 
-body:has(#support-page) * {
+body.support-body * {
   box-sizing: border-box;
 }
 
-body:has(#support-page) .support-page {
+body.support-body .support-page {
   min-height: 100vh;
   padding: clamp(20px, 3vw, 40px) 16px 72px;
 }
 
-body:has(#support-page) .support-shell {
+body.support-body .support-shell {
   width: min(1120px, 92%);
   margin: 0 auto;
   display: grid;
   gap: 20px;
 }
 
-body:has(#support-page) .support-hero {
+body.support-body .support-hero {
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: clamp(20px, 3vw, 34px);
@@ -72,7 +72,7 @@ body:has(#support-page) .support-hero {
   box-shadow: 0 12px 28px rgba(11, 18, 32, 0.08);
 }
 
-body:has(#support-page) .support-kicker {
+body.support-body .support-kicker {
   display: inline-block;
   border: 1px solid rgba(30, 163, 126, 0.35);
   background: rgba(30, 163, 126, 0.12);
@@ -85,7 +85,7 @@ body:has(#support-page) .support-kicker {
   letter-spacing: 0.06em;
 }
 
-body:has(#support-page) .support-hero h1 {
+body.support-body .support-hero h1 {
   margin: 12px 0 8px;
   font-family: "Poppins", sans-serif;
   font-size: clamp(1.5rem, 2.7vw, 2.05rem);
@@ -97,20 +97,20 @@ body:has(#support-page) .support-hero h1 {
   font-weight: 600;
 }
 
-body:has(#support-page) .support-hero p {
+body.support-body .support-hero p {
   margin: 0;
   max-width: 760px;
   color: var(--text-muted);
   line-height: 1.62;
 }
 
-body:has(#support-page) .support-grid {
+body.support-body .support-grid {
   display: grid;
   grid-template-columns: minmax(260px, 0.95fr) minmax(0, 1.05fr);
   gap: clamp(14px, 2vw, 22px);
 }
 
-body:has(#support-page) .support-card {
+body.support-body .support-card {
   border: 1px solid var(--border);
   border-radius: 16px;
   background: linear-gradient(180deg, var(--surface), var(--surface-soft));
@@ -119,65 +119,65 @@ body:has(#support-page) .support-card {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-body:has(#support-page) .support-card:hover {
+body.support-body .support-card:hover {
   border-color: rgba(30, 163, 126, 0.45);
   box-shadow: 0 14px 28px rgba(11, 18, 32, 0.1);
 }
 
-body:has(#support-page) .support-card h2 {
+body.support-body .support-card h2 {
   margin: 0 0 12px;
   font-size: 1.08rem;
   font-weight: 600;
 }
 
-body:has(#support-page) .support-info {
+body.support-body .support-info {
   display: grid;
   gap: 14px;
 }
 
-body:has(#support-page) .info-block h3 {
+body.support-body .info-block h3 {
   margin: 0 0 5px;
   font-size: 0.95rem;
   font-weight: 600;
   color: #1e3356;
 }
 
-body:has(#support-page) .info-block p {
+body.support-body .info-block p {
   margin: 0;
   color: #3c5072;
   line-height: 1.56;
 }
 
-body:has(#support-page) .support-form-note {
+body.support-body .support-form-note {
   margin: 0 0 14px;
   color: #3f5377;
   line-height: 1.52;
 }
 
-body:has(#support-page) .support-form {
+body.support-body .support-form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 
-body:has(#support-page) .support-form .field {
+body.support-body .support-form .field {
   display: grid;
   gap: 6px;
 }
 
-body:has(#support-page) .support-form .field-full {
+body.support-body .support-form .field-full {
   grid-column: 1 / -1;
 }
 
-body:has(#support-page) .support-form label {
+body.support-body .support-form label {
   font-size: 0.85rem;
   font-weight: 600;
   color: #1f3355;
 }
 
-body:has(#support-page) .support-form input,
-body:has(#support-page) .support-form select,
-body:has(#support-page) .support-form textarea {
+body.support-body .support-form input,
+body.support-body .support-form select,
+body.support-body .support-form textarea {
   width: 100%;
   border: 1px solid #b7c7df;
   border-radius: 10px;
@@ -188,14 +188,14 @@ body:has(#support-page) .support-form textarea {
   outline: none;
 }
 
-body:has(#support-page) .support-form input:focus,
-body:has(#support-page) .support-form select:focus,
-body:has(#support-page) .support-form textarea:focus {
+body.support-body .support-form input:focus,
+body.support-body .support-form select:focus,
+body.support-body .support-form textarea:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(30, 163, 126, 0.16);
 }
 
-body:has(#support-page) .support-form button {
+body.support-body .support-form button {
   border: 1px solid var(--primary);
   border-radius: 10px;
   background: linear-gradient(180deg, #172a48, #0f1a2e);
@@ -207,32 +207,32 @@ body:has(#support-page) .support-form button {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-body:has(#support-page) .support-form button:hover {
+body.support-body .support-form button:hover {
   transform: translateY(-1px);
   border-color: var(--accent);
   box-shadow: 0 10px 20px rgba(15, 26, 46, 0.22);
 }
 
-body:has(#support-page) .support-footer-note {
+body.support-body .support-footer-note {
   margin: 14px 0 0;
   font-size: 0.94rem;
   color: #3e5276;
 }
 
-body:has(#support-page) .support-footer-note a {
+body.support-body .support-footer-note a {
   color: #11477e;
   text-decoration: none;
   border-bottom: 1px solid rgba(17, 71, 126, 0.35);
 }
 
 @media (max-width: 920px) {
-  body:has(#support-page) .support-grid {
+  body.support-body .support-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 700px) {
-  body:has(#support-page) .support-form {
+  body.support-body .support-form {
     grid-template-columns: 1fr;
   }
 }

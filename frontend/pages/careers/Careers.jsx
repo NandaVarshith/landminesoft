@@ -41,23 +41,11 @@ function Career() {
   useEffect(() => {
     document.title = 'Careers | Landmine Soft';
 
-    const ensureLink = (id, rel, href, crossOrigin) => {
-      if (document.getElementById(id)) return;
-      const link = document.createElement('link');
-      link.id = id;
-      link.rel = rel;
-      link.href = href;
-      if (crossOrigin) link.crossOrigin = crossOrigin;
-      document.head.appendChild(link);
-    };
+    document.body.classList.add('careers-body');
 
-    ensureLink('landminesoft-careers-preconnect-fonts', 'preconnect', 'https://fonts.googleapis.com');
-    ensureLink('landminesoft-careers-preconnect-gstatic', 'preconnect', 'https://fonts.gstatic.com', 'anonymous');
-    ensureLink(
-      'landminesoft-careers-google-fonts',
-      'stylesheet',
-      'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
-    );
+    return () => {
+      document.body.classList.remove('careers-body');
+    };
   }, []);
 
   useEffect(() => {
@@ -169,7 +157,7 @@ function Career() {
             <div className="apply-modal-head">
               <h2 id="apply-modal-title">Apply for {selectedRole.title}</h2>
               <button type="button" className="apply-modal-close" aria-label="Close apply modal" onClick={() => setSelectedRole(null)}>
-                ×
+                x
               </button>
             </div>
 
@@ -217,7 +205,7 @@ function Career() {
               </div>
 
               {selectedRole.internshipNote && (
-                <p className="internship-note">💡 {selectedRole.internshipNote}</p>
+                <p className="internship-note">Note: {selectedRole.internshipNote}</p>
               )}
 
               <div className="field field-full">

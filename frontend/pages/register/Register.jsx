@@ -8,6 +8,12 @@ function Register() {
 
   useEffect(() => {
     document.title = 'Create Account | Landmine Soft';
+
+    document.body.classList.add('register-body');
+
+    return () => {
+      document.body.classList.remove('register-body');
+    };
   }, []);
 
   const handleSubmit = (event) => {

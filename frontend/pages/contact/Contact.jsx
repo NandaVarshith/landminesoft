@@ -7,6 +7,12 @@ function Contact() {
 
   useEffect(() => {
     document.title = 'Contact Us | Landmine Soft';
+
+    document.body.classList.add('contact-body');
+
+    return () => {
+      document.body.classList.remove('contact-body');
+    };
   }, []);
 
   const handleSubmit = (event) => {

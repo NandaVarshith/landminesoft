@@ -38,10 +38,6 @@ function HeaderDark({ variant = 'dark' }) {
     };
   }, []);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [location.pathname]);
-
   return (
     <header className={`about-header about-header--${variant}`}>
       <div className="about-header-inner">

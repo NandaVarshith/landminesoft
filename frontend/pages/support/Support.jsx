@@ -7,6 +7,12 @@ function Support() {
 
   useEffect(() => {
     document.title = 'Support | Landmine Soft';
+
+    document.body.classList.add('support-body');
+
+    return () => {
+      document.body.classList.remove('support-body');
+    };
   }, []);
 
   const handleSubmit = (event) => {

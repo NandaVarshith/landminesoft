@@ -74,6 +74,12 @@ function GetDemo() {
 
   useEffect(() => {
     document.title = 'Product Demo Center | Landmine Soft';
+
+    document.body.classList.add('get-demo-body');
+
+    return () => {
+      document.body.classList.remove('get-demo-body');
+    };
   }, []);
 
   useEffect(() => {

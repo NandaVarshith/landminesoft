@@ -12,6 +12,12 @@ function Login() {
 
   useEffect(() => {
     document.title = 'Login | Landmine Soft';
+
+    document.body.classList.add('login-body');
+
+    return () => {
+      document.body.classList.remove('login-body');
+    };
   }, []);
 
   const handleSubmit = (event) => {

@@ -1,4 +1,4 @@
-body:has(#register-page) {
+body.register-body {
   --bg: #f5f8ff;
   --surface: #ffffff;
   --surface-soft: #edf3ff;
@@ -20,7 +20,7 @@ body:has(#register-page) {
   overflow-x: hidden;
 }
 
-body:has(#register-page)::before {
+body.register-body::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -32,7 +32,7 @@ body:has(#register-page)::before {
   z-index: -2;
 }
 
-body:has(#register-page)::after {
+body.register-body::after {
   content: "";
   position: fixed;
   width: 420px;
@@ -45,7 +45,7 @@ body:has(#register-page)::after {
   z-index: -1;
 }
 
-body:has(#register-page) * {
+body.register-body * {
   box-sizing: border-box;
 }
 

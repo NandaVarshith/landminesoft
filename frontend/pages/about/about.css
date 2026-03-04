@@ -1,4 +1,4 @@
-body:has(#team-scroller) {
+body.about-body {
   --bg-main: #070b14;
   --bg-elevated: #0b1220;
   --bg-card: #0f172a;
@@ -9,11 +9,11 @@ body:has(#team-scroller) {
   --glass: rgba(255, 255, 255, 0.04);
 }
 
-body:has(#team-scroller) * {
+body.about-body * {
   box-sizing: border-box;
 }
 
-body:has(#team-scroller) {
+body.about-body {
   margin: 0;
   font-family: "Inter", sans-serif;
   background:
@@ -22,26 +22,26 @@ body:has(#team-scroller) {
   color: var(--text-main);
 }
 
-body:has(#team-scroller) section {
+body.about-body section {
   max-width: 1200px;
   margin: auto;
   padding: 100px 20px;
 }
 
-body:has(#team-scroller) h1,
-body:has(#team-scroller) h2,
-body:has(#team-scroller) h3 {
+body.about-body h1,
+body.about-body h2,
+body.about-body h3 {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   letter-spacing: -0.01em;
 }
 
-body:has(#team-scroller) h1 span,
-body:has(#team-scroller) h2 span {
+body.about-body h1 span,
+body.about-body h2 span {
   color: var(--brand);
 }
 
-body:has(#team-scroller) .hero {
+body.about-body .hero {
   position: relative;
   min-height: 75vh;
   display: flex;
@@ -49,7 +49,7 @@ body:has(#team-scroller) .hero {
   justify-content: center;
 }
 
-body:has(#team-scroller) .hero-video {
+body.about-body .hero-video {
   position: absolute;
   top: 0;
   left: calc(50% - 50vw);
@@ -60,12 +60,12 @@ body:has(#team-scroller) .hero-video {
   opacity: 0.4;
 }
 
-body:has(#team-scroller) .hero h1 {
+body.about-body .hero h1 {
   font-size: clamp(2rem, 3.6vw, 2.6rem);
   max-width: 900px;
 }
 
-body:has(#team-scroller) .hero p {
+body.about-body .hero p {
   max-width: 720px;
   margin-top: 22px;
   color: var(--text-muted);
@@ -73,7 +73,7 @@ body:has(#team-scroller) .hero p {
   line-height: 1.75;
 }
 
-body:has(#team-scroller) .split {
+body.about-body .split {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 80px;
@@ -81,13 +81,13 @@ body:has(#team-scroller) .split {
 }
 
 @media (max-width: 900px) {
-  body:has(#team-scroller) .split {
+  body.about-body .split {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 }
 
-body:has(#team-scroller) .label {
+body.about-body .label {
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-size: 0.7rem;
@@ -95,13 +95,13 @@ body:has(#team-scroller) .label {
   margin-bottom: 14px;
 }
 
-body:has(#team-scroller) .content p {
+body.about-body .content p {
   color: var(--text-muted);
   line-height: 1.8;
   font-size: 1.02rem;
 }
 
-body:has(#team-scroller) .stat {
+body.about-body .stat {
   padding: 26px 28px;
   background: var(--glass);
   border: 1px solid var(--border);
@@ -110,42 +110,42 @@ body:has(#team-scroller) .stat {
   backdrop-filter: blur(8px);
 }
 
-body:has(#team-scroller) .stat strong {
+body.about-body .stat strong {
   display: block;
   font-size: 1.5rem;
   font-family: "Poppins", sans-serif;
 }
 
-body:has(#team-scroller) .stat span {
+body.about-body .stat span {
   color: var(--text-muted);
 }
 
-body:has(#team-scroller) .team-card img {
+body.about-body .team-card img {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-body:has(#team-scroller) .team-card:hover img {
+body.about-body .team-card:hover img {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-body:has(#team-scroller) .team-scroller-wrapper {
+body.about-body .team-scroller-wrapper {
   position: relative;
   max-width: 760px;
   margin: 0 auto;
 }
 
-body:has(#team-scroller) #team-scroller {
+body.about-body #team-scroller {
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-body:has(#team-scroller) #team-scroller::-webkit-scrollbar {
+body.about-body #team-scroller::-webkit-scrollbar {
   display: none;
 }
 
-body:has(#team-scroller) .scroll-btn {
+body.about-body .scroll-btn {
   position: absolute;
   top: 48px;
   background: rgba(30, 41, 59, 0.5);
@@ -164,22 +164,22 @@ body:has(#team-scroller) .scroll-btn {
   backdrop-filter: blur(4px);
 }
 
-body:has(#team-scroller) .team-scroller-wrapper:hover .scroll-btn {
+body.about-body .team-scroller-wrapper:hover .scroll-btn {
   opacity: 0.7;
 }
 
-body:has(#team-scroller) .scroll-btn:hover {
+body.about-body .scroll-btn:hover {
   opacity: 1;
   background: rgba(51, 65, 85, 0.7);
 }
 
-body:has(#team-scroller) footer {
+body.about-body footer {
   padding: 40px 20px;
   text-align: center;
   border-top: 1px solid var(--border);
   color: var(--text-muted);
 }
 
-body:has(#team-scroller) footer span {
+body.about-body footer span {
   color: var(--brand);
 }
