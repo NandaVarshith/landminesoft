@@ -17,6 +17,33 @@ body:has(#get-demo-page) {
     radial-gradient(circle at 10% 78%, rgba(61, 187, 145, 0.07), transparent 32%),
     var(--bg);
   color: var(--text);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body:has(#get-demo-page)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(11, 18, 32, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 18, 32, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -2;
+}
+
+body:has(#get-demo-page)::after {
+  content: "";
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  top: -140px;
+  background: radial-gradient(circle, rgba(11, 18, 32, 0.09), transparent 70%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: -1;
 }
 
 body:has(#get-demo-page) * {
@@ -29,7 +56,7 @@ body:has(#get-demo-page) .get-demo-page {
 }
 
 body:has(#get-demo-page) .get-demo-shell {
-  width: min(1160px, 96%);
+  width: min(1120px, 92%);
   margin: 0 auto;
 }
 
@@ -54,7 +81,7 @@ body:has(#get-demo-page) .get-demo-kicker {
   border-radius: 999px;
   padding: 6px 10px;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -62,8 +89,13 @@ body:has(#get-demo-page) .get-demo-kicker {
 body:has(#get-demo-page) .hero-copy h1 {
   margin: 12px 0 10px;
   font-family: "Poppins", sans-serif;
-  font-size: clamp(1.85rem, 3.3vw, 2.7rem);
-  line-height: 1.06;
+  font-size: clamp(1.5rem, 2.8vw, 2.05rem);
+  line-height: 1.18;
+  background: linear-gradient(90deg, var(--primary) 0%, #1b2f53 58%, rgba(27, 47, 83, 0.58) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
 }
 
 body:has(#get-demo-page) .hero-copy p {
@@ -88,7 +120,7 @@ body:has(#get-demo-page) .hero-secondary {
   padding: 11px 16px;
   border-radius: 10px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.9rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
@@ -125,7 +157,8 @@ body:has(#get-demo-page) .hero-panel {
 
 body:has(#get-demo-page) .hero-panel h2 {
   margin: 0 0 8px;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: #17263f;
 }
 
@@ -180,13 +213,16 @@ body:has(#get-demo-page) .demo-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 body:has(#get-demo-page) .demo-tag {
   margin: 0;
   color: #1f7f60;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -194,15 +230,16 @@ body:has(#get-demo-page) .demo-tag {
 
 body:has(#get-demo-page) .demo-card h2 {
   margin: 0;
-  font-size: 1.22rem;
+  font-size: 1.08rem;
+  font-weight: 600;
   line-height: 1.25;
 }
 
 body:has(#get-demo-page) .demo-card h3 {
   margin: -2px 0 0;
   color: #223858;
-  font-size: 0.97rem;
-  font-weight: 600;
+  font-size: 0.92rem;
+  font-weight: 500;
 }
 
 body:has(#get-demo-page) .demo-card p {
@@ -221,8 +258,8 @@ body:has(#get-demo-page) .demo-cta {
   background: linear-gradient(180deg, #172a49, #101929);
   color: #fff;
   text-decoration: none;
-  font-size: 0.89rem;
-  font-weight: 700;
+  font-size: 0.86rem;
+  font-weight: 600;
   letter-spacing: 0.02em;
   padding: 11px 14px;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;

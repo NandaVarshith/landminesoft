@@ -8,6 +8,8 @@ import Consultation from '../pages/consultation/Consultation.jsx';
 import GetDemo from '../pages/getDemo/GetDemo.jsx';
 import Contact from '../pages/contact/Contact.jsx';
 import Support from '../pages/support/Support.jsx';
+import Login from '../pages/login/Login.jsx';
+import Register from '../pages/register/Register.jsx';
 // Corrected import path and component name
 
 function App() {
@@ -21,7 +23,9 @@ function App() {
       <Route path="/get-demo" element={<GetDemo/>} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="/support" element={<Support/>} />
-     
+      <Route path="/login" element={<Login/>} />
+      <Route path="/register" element={<Register/>} />
+      
     </Routes>
   )
 }

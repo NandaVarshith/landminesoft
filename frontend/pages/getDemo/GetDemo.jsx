@@ -5,7 +5,7 @@ import './GetDemo.css';
 
 const demoTracks = [
   {
-    icon: '🛍️',
+    icon: 'COM',
     tag: 'E-Commerce',
     title: 'Scale your online store',
     heading: 'E-Commerce Solutions',
@@ -13,7 +13,7 @@ const demoTracks = [
       'Custom storefronts, order management, payments and analytics for high-growth online brands.',
   },
   {
-    icon: '📱',
+    icon: 'APP',
     tag: 'Apps',
     title: 'Build modern apps',
     heading: 'Web & Mobile Apps',
@@ -21,7 +21,7 @@ const demoTracks = [
       'Full-stack product development for SaaS, internal tools and customer-facing applications.',
   },
   {
-    icon: '☁️',
+    icon: 'CLD',
     tag: 'Cloud',
     title: 'Cloud-native platforms',
     heading: 'Cloud & DevOps',
@@ -29,7 +29,7 @@ const demoTracks = [
       'Design, deploy and manage scalable cloud infrastructure on AWS, Azure and GCP.',
   },
   {
-    icon: '🤖',
+    icon: 'AI',
     tag: 'AI',
     title: 'AI-powered products',
     heading: 'AI & Automation',

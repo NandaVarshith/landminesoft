@@ -12,6 +12,7 @@ function HeaderDark({ variant = 'dark' }) {
     { to: '/careers', label: 'Careers' },
     { to: '/contact', label: 'Contact' },
     { to: '/support', label: 'Support' },
+    { to: '/login', label: 'Login' },
     { to: '/get-demo', label: 'Get a Demo' },
   ];
 

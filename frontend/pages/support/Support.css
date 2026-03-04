@@ -17,6 +17,33 @@ body:has(#support-page) {
     radial-gradient(circle at 100% 8%, rgba(15, 26, 46, 0.08), transparent 42%),
     var(--bg);
   color: var(--text);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body:has(#support-page)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(11, 18, 32, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 18, 32, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -2;
+}
+
+body:has(#support-page)::after {
+  content: "";
+  position: fixed;
+  width: 380px;
+  height: 380px;
+  right: -120px;
+  top: -130px;
+  background: radial-gradient(circle, rgba(11, 18, 32, 0.08), transparent 70%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: -1;
 }
 
 body:has(#support-page) * {
@@ -29,7 +56,7 @@ body:has(#support-page) .support-page {
 }
 
 body:has(#support-page) .support-shell {
-  width: min(1120px, 96%);
+  width: min(1120px, 92%);
   margin: 0 auto;
   display: grid;
   gap: 20px;
@@ -53,7 +80,7 @@ body:has(#support-page) .support-kicker {
   border-radius: 999px;
   padding: 6px 10px;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -61,8 +88,13 @@ body:has(#support-page) .support-kicker {
 body:has(#support-page) .support-hero h1 {
   margin: 12px 0 8px;
   font-family: "Poppins", sans-serif;
-  font-size: clamp(1.8rem, 3.2vw, 2.55rem);
-  line-height: 1.08;
+  font-size: clamp(1.5rem, 2.7vw, 2.05rem);
+  line-height: 1.18;
+  background: linear-gradient(90deg, #101929 0%, #1b2f53 58%, rgba(27, 47, 83, 0.58) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
 }
 
 body:has(#support-page) .support-hero p {
@@ -84,11 +116,18 @@ body:has(#support-page) .support-card {
   background: linear-gradient(180deg, var(--surface), var(--surface-soft));
   box-shadow: 0 10px 24px rgba(11, 18, 32, 0.08);
   padding: clamp(18px, 2.4vw, 24px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body:has(#support-page) .support-card:hover {
+  border-color: rgba(30, 163, 126, 0.45);
+  box-shadow: 0 14px 28px rgba(11, 18, 32, 0.1);
 }
 
 body:has(#support-page) .support-card h2 {
   margin: 0 0 12px;
-  font-size: 1.2rem;
+  font-size: 1.08rem;
+  font-weight: 600;
 }
 
 body:has(#support-page) .support-info {
@@ -98,7 +137,8 @@ body:has(#support-page) .support-info {
 
 body:has(#support-page) .info-block h3 {
   margin: 0 0 5px;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: #1e3356;
 }
 
@@ -161,7 +201,7 @@ body:has(#support-page) .support-form button {
   background: linear-gradient(180deg, #172a48, #0f1a2e);
   color: #fff;
   font: inherit;
-  font-weight: 700;
+  font-weight: 600;
   padding: 11px 14px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
