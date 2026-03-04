@@ -225,8 +225,135 @@ body:has(#rolesTrack) .footer-cta a {
   font-weight: 600;
 }
 
+body:has(#rolesTrack) .apply-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 11, 20, 0.55);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  z-index: 120;
+}
+
+body:has(#rolesTrack) .apply-modal {
+  width: min(620px, 96vw);
+  max-height: 88vh;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff, #f2f7ff);
+  box-shadow: 0 20px 46px rgba(11, 18, 32, 0.24);
+  padding: 18px;
+}
+
+body:has(#rolesTrack) .apply-modal-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+body:has(#rolesTrack) .apply-modal-head h2 {
+  margin: 0;
+  font-size: 1.18rem;
+  line-height: 1.3;
+}
+
+body:has(#rolesTrack) .apply-modal-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #c3d1e5;
+  background: #ffffff;
+  color: #122038;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+body:has(#rolesTrack) .job-id {
+  margin: 6px 0 14px;
+  color: #405575;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+body:has(#rolesTrack) .apply-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+body:has(#rolesTrack) .field {
+  display: grid;
+  gap: 6px;
+}
+
+body:has(#rolesTrack) .field-full {
+  grid-column: 1 / -1;
+}
+
+body:has(#rolesTrack) .apply-form label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1f3355;
+}
+
+body:has(#rolesTrack) .apply-form input {
+  width: 100%;
+  border: 1px solid #bcc9dd;
+  border-radius: 10px;
+  padding: 10px 11px;
+  font: inherit;
+  color: #122038;
+  background: #fcfdff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+body:has(#rolesTrack) .apply-form input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(23, 155, 120, 0.16);
+  background: #ffffff;
+}
+
+body:has(#rolesTrack) .internship-note {
+  margin: 0;
+  grid-column: 1 / -1;
+  border: 1px solid rgba(47, 191, 143, 0.35);
+  background: rgba(47, 191, 143, 0.12);
+  color: #0e6c53;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
+
+body:has(#rolesTrack) .apply-form button {
+  margin-top: 2px;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #1a2d4f, #0f1a2e);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  padding: 11px 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+body:has(#rolesTrack) .apply-form button:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 18px rgba(15, 26, 46, 0.22);
+}
+
 @media (max-width: 760px) {
   body:has(#rolesTrack) .controls {
     display: none;
+  }
+
+  body:has(#rolesTrack) .apply-form {
+    grid-template-columns: 1fr;
   }
 }

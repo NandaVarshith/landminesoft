@@ -182,12 +182,9 @@ function About() {
           </button>
         </div>
       </section>
-
-      <footer>
-        <span>Landmine Soft</span> � Hyderabad, India � � 2026
-      </footer>
     </>
   );
 }
 
 export default About;
+

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './HeaderDark.css';
+import logo from '../../assets/landminelogo-CMvDdIuP.png';
 
 function HeaderDark({ variant = 'dark' }) {
   const [open, setOpen] = useState(false);
@@ -44,6 +45,10 @@ function HeaderDark({ variant = 'dark' }) {
   return (
     <header className={`about-header about-header--${variant}`}>
       <div className="about-header-inner">
+        <Link to="/" className="about-brand" aria-label="Landmine Soft home">
+          <img src={logo} alt="Landmine Soft" />
+        </Link>
+
         <div className="about-header-actions">
           <div className="about-menu-wrap" ref={menuRef}>
             <button

@@ -187,13 +187,10 @@ function HomePage() {
         </div>
       </div>
     </section>
-
-    <footer>
-      © 2024 <span>Landmine Soft</span>. Engineering software with vision and trust.
-    </footer>
     </>
   )
 }
 
 export default HomePage
+
 

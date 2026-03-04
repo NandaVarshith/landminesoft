@@ -5,6 +5,11 @@ import './Consultation.css';
 function Consultation() {
   useEffect(() => {
     document.title = 'Consultation | Landmine Soft';
+    document.body.classList.add('consultation-body');
+
+    return () => {
+      document.body.classList.remove('consultation-body');
+    };
   }, []);
 
   return (

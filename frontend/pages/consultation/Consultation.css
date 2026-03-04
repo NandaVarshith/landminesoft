@@ -1,4 +1,4 @@
-body:has(#consultation-page) {
+body.consultation-body {
   --bg: #f6f9ff;
   --bg-soft: #ffffff;
   --card: #f2f6ff;
@@ -9,7 +9,7 @@ body:has(#consultation-page) {
   --accent: #2fbf8f;
 }
 
-body:has(#consultation-page) {
+body.consultation-body {
   margin: 0;
   font-family: "Inter", sans-serif;
   background:
@@ -17,18 +17,68 @@ body:has(#consultation-page) {
     radial-gradient(circle at 10% 78%, rgba(61, 187, 145, 0.07), transparent 32%),
     var(--bg);
   color: var(--text);
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scrollbar-width: thin;
+  scrollbar-color: #9fb5d3 #eef3fb;
 }
 
-body:has(#consultation-page) * {
+body.consultation-body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(11, 18, 32, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 18, 32, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -2;
+}
+
+body.consultation-body::after {
+  content: "";
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  top: -140px;
+  background: radial-gradient(circle, rgba(11, 18, 32, 0.09), transparent 70%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+body.consultation-body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body.consultation-body::-webkit-scrollbar-track {
+  background: #eef3fb;
+}
+
+body.consultation-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c6d5ea, #8aa7cc);
+  border-radius: 999px;
+  border: 2px solid #eef3fb;
+}
+
+body.consultation-body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #b8cbe4, #7798c1);
+}
+
+body.consultation-body * {
   box-sizing: border-box;
 }
 
-body:has(#consultation-page) .consultation-page {
+body.consultation-body .consultation-page {
   min-height: 100vh;
   padding: clamp(18px, 3vw, 34px) 16px 72px;
 }
 
-body:has(#consultation-page) .consultation-shell {
+body.consultation-body .consultation-shell {
   width: min(1120px, 96%);
   margin: 0 auto;
   display: grid;
@@ -37,7 +87,7 @@ body:has(#consultation-page) .consultation-shell {
   align-items: start;
 }
 
-body:has(#consultation-page) .consultation-intro {
+body.consultation-body .consultation-intro {
   position: sticky;
   top: 78px;
   border: 1px solid var(--border);
@@ -47,7 +97,7 @@ body:has(#consultation-page) .consultation-intro {
   padding: clamp(18px, 2vw, 24px);
 }
 
-body:has(#consultation-page) .consultation-kicker {
+body.consultation-body .consultation-kicker {
   display: inline-block;
   border: 1px solid rgba(47, 191, 143, 0.35);
   background: rgba(47, 191, 143, 0.12);
@@ -60,31 +110,31 @@ body:has(#consultation-page) .consultation-kicker {
   letter-spacing: 0.06em;
 }
 
-body:has(#consultation-page) .consultation-intro h1 {
+body.consultation-body .consultation-intro h1 {
   margin: 14px 0 10px;
   font-size: clamp(1.55rem, 2.6vw, 2.1rem);
   line-height: 1.15;
 }
 
-body:has(#consultation-page) .consultation-intro p {
+body.consultation-body .consultation-intro p {
   margin: 0;
   color: var(--text-muted);
   line-height: 1.65;
 }
 
-body:has(#consultation-page) .consultation-points {
+body.consultation-body .consultation-points {
   margin: 18px 0 0;
   padding-left: 18px;
   display: grid;
   gap: 8px;
 }
 
-body:has(#consultation-page) .consultation-points li {
+body.consultation-body .consultation-points li {
   color: #243956;
   line-height: 1.5;
 }
 
-body:has(#consultation-page) .consultation-card {
+body.consultation-body .consultation-card {
   border: 1px solid var(--border);
   border-radius: 16px;
   background: linear-gradient(180deg, var(--bg-soft), var(--card));
@@ -92,46 +142,46 @@ body:has(#consultation-page) .consultation-card {
   padding: clamp(20px, 3vw, 34px);
 }
 
-body:has(#consultation-page) .consultation-head {
+body.consultation-body .consultation-head {
   margin-bottom: 18px;
 }
 
-body:has(#consultation-page) .consultation-head h2 {
+body.consultation-body .consultation-head h2 {
   margin: 0;
   font-size: 1.15rem;
   letter-spacing: 0.01em;
 }
 
-body:has(#consultation-page) .consultation-head p {
+body.consultation-body .consultation-head p {
   margin: 6px 0 0;
   font-size: 0.92rem;
   color: var(--text-muted);
 }
 
-body:has(#consultation-page) .consultation-form {
+body.consultation-body .consultation-form {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-body:has(#consultation-page) .field {
+body.consultation-body .field {
   display: grid;
   gap: 7px;
 }
 
-body:has(#consultation-page) .field-full {
+body.consultation-body .field-full {
   grid-column: 1 / -1;
 }
 
-body:has(#consultation-page) .consultation-form label {
+body.consultation-body .consultation-form label {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text);
 }
 
-body:has(#consultation-page) .consultation-form input,
-body:has(#consultation-page) .consultation-form select,
-body:has(#consultation-page) .consultation-form textarea {
+body.consultation-body .consultation-form input,
+body.consultation-body .consultation-form select,
+body.consultation-body .consultation-form textarea {
   width: 100%;
   border: 1px solid #c6d4e7;
   border-radius: 10px;
@@ -142,25 +192,25 @@ body:has(#consultation-page) .consultation-form textarea {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-body:has(#consultation-page) .consultation-form input::placeholder,
-body:has(#consultation-page) .consultation-form textarea::placeholder {
+body.consultation-body .consultation-form input::placeholder,
+body.consultation-body .consultation-form textarea::placeholder {
   color: #7b8ca8;
 }
 
-body:has(#consultation-page) .consultation-form textarea {
+body.consultation-body .consultation-form textarea {
   resize: vertical;
   min-height: 138px;
 }
 
-body:has(#consultation-page) .consultation-form input:focus,
-body:has(#consultation-page) .consultation-form select:focus,
-body:has(#consultation-page) .consultation-form textarea:focus {
+body.consultation-body .consultation-form input:focus,
+body.consultation-body .consultation-form select:focus,
+body.consultation-body .consultation-form textarea:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 4px rgba(47, 191, 143, 0.17);
 }
 
-body:has(#consultation-page) .consultation-form button {
+body.consultation-body .consultation-form button {
   margin-top: 8px;
   border: 1px solid var(--primary);
   border-radius: 11px;
@@ -173,28 +223,28 @@ body:has(#consultation-page) .consultation-form button {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-body:has(#consultation-page) .consultation-form button:hover {
+body.consultation-body .consultation-form button:hover {
   border-color: var(--accent);
   transform: translateY(-1px);
   box-shadow: 0 10px 22px rgba(16, 25, 41, 0.22);
 }
 
 @media (max-width: 980px) {
-  body:has(#consultation-page) .consultation-shell {
+  body.consultation-body .consultation-shell {
     grid-template-columns: 1fr;
   }
 
-  body:has(#consultation-page) .consultation-intro {
+  body.consultation-body .consultation-intro {
     position: static;
   }
 }
 
 @media (max-width: 760px) {
-  body:has(#consultation-page) .consultation-form {
+  body.consultation-body .consultation-form {
     grid-template-columns: 1fr;
   }
 
-  body:has(#consultation-page) .field-full {
+  body.consultation-body .field-full {
     grid-column: auto;
   }
 }

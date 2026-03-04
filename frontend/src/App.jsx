@@ -10,23 +10,26 @@ import Contact from '../pages/contact/Contact.jsx';
 import Support from '../pages/support/Support.jsx';
 import Login from '../pages/login/Login.jsx';
 import Register from '../pages/register/Register.jsx';
+import SiteFooter from './components/SiteFooter.jsx';
 // Corrected import path and component name
 
 function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={<HomePage/>} />
-      <Route path="/about" element={<About/>} />
-      <Route path="/careers" element={<Careers/>} />
-      <Route path="/consultation" element={<Consultation/>} />
-      <Route path="/get-demo" element={<GetDemo/>} />
-      <Route path="/contact" element={<Contact/>} />
-      <Route path="/support" element={<Support/>} />
-      <Route path="/login" element={<Login/>} />
-      <Route path="/register" element={<Register/>} />
-      
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/careers" element={<Careers/>} />
+        <Route path="/consultation" element={<Consultation/>} />
+        <Route path="/get-demo" element={<GetDemo/>} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/support" element={<Support/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register/>} />
+      </Routes>
+      <SiteFooter />
+    </>
   )
 }
 

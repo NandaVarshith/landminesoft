@@ -13,8 +13,8 @@ body:has(#support-page) {
   margin: 0;
   font-family: "Inter", sans-serif;
   background:
-    radial-gradient(circle at 8% 0%, rgba(30, 163, 126, 0.1), transparent 33%),
-    radial-gradient(circle at 100% 8%, rgba(15, 26, 46, 0.08), transparent 42%),
+    radial-gradient(circle at 88% 8%, rgba(11, 18, 32, 0.08), transparent 35%),
+    radial-gradient(circle at 10% 78%, rgba(61, 187, 145, 0.07), transparent 32%),
     var(--bg);
   color: var(--text);
   position: relative;
@@ -26,8 +26,8 @@ body:has(#support-page)::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(11, 18, 32, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11, 18, 32, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(11, 18, 32, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 18, 32, 0.07) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
   z-index: -2;
@@ -36,11 +36,11 @@ body:has(#support-page)::before {
 body:has(#support-page)::after {
   content: "";
   position: fixed;
-  width: 380px;
-  height: 380px;
+  width: 420px;
+  height: 420px;
   right: -120px;
-  top: -130px;
-  background: radial-gradient(circle, rgba(11, 18, 32, 0.08), transparent 70%);
+  top: -140px;
+  background: radial-gradient(circle, rgba(11, 18, 32, 0.09), transparent 70%);
   filter: blur(6px);
   pointer-events: none;
   z-index: -1;
