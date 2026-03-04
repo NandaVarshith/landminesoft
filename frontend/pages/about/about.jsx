@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './About.css';
+import './about.css';
 import HeaderDark from '../header/HeaderDark.jsx';
 import heroVideo from '../../assets/about_page.mp4';
 
@@ -185,3 +185,4 @@ function About() {
 }
 
 export default About;
+
