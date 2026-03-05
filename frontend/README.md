@@ -1,16 +1,107 @@
-# React + Vite
+# Landmine Soft Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend application for the Landmine Soft company website, built with React, Vite, and React Router.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a modern, responsive multi-page website focused on professional branding for a software/IT company. It includes public marketing pages, contact flows, authentication UI, and career/application UI.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite 7
+- React Router DOM 7
+- ESLint 9
 
-## Expanding the ESLint configuration
+## Implemented Pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Home (`/`)
+- About (`/about`)
+- Services (`/services`)
+- Careers (`/careers`)
+- Consultation (`/consultation`)
+- Get Demo (`/get-demo`)
+- Contact (`/contact`)
+- Support (`/support`)
+- Login (`/login`)
+- Register (`/register`)
+
+## Project Structure
+
+```text
+frontend/
+  assets/
+  pages/
+  src/
+    components/
+    App.jsx
+    main.jsx
+  index.html
+  package.json
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm 9+
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Run Development Server
+
+```bash
+npm run dev
+```
+
+Default local URL is typically `http://localhost:5173`.
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Scripts
+
+- `npm run dev` - Start Vite development server
+- `npm run build` - Create production build in `dist/`
+- `npm run preview` - Preview built output locally
+- `npm run lint` - Run ESLint
+
+## Deployment (Vercel)
+
+If deploying without `vercel.json`, use these settings in Vercel:
+
+- Root Directory: `frontend`
+- Framework Preset: `Vite`
+- Install Command: `npm install`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+
+For React Router routes, add rewrite:
+
+- Source: `/(.*)`
+- Destination: `/index.html`
+
+## Notes
+
+- Form integrations are currently UI-focused and can be connected to backend APIs.
+- Content for testimonials/highlights/job roles uses demo content where applicable.
