@@ -10,6 +10,7 @@ function HeaderDark({ variant = 'dark' }) {
 
   const menuLinks = [
     { to: '/about', label: 'About' },
+    { to: '/services', label: 'Services' },
     { to: '/careers', label: 'Careers' },
     { to: '/contact', label: 'Contact' },
     { to: '/support', label: 'Support' },

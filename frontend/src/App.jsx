@@ -3,6 +3,7 @@ import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import HomePage from '../pages/home/index.jsx';
 import About from '../pages/about/about.jsx';
+import Services from '../pages/services/Services.jsx';
 import Careers from '../pages/careers/Careers.jsx';
 import Consultation from '../pages/consultation/Consultation.jsx';
 import GetDemo from '../pages/getDemo/GetDemo.jsx';
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/about" element={<About/>} />
+        <Route path="/services" element={<Services/>} />
         <Route path="/careers" element={<Careers/>} />
         <Route path="/consultation" element={<Consultation/>} />
         <Route path="/get-demo" element={<GetDemo/>} />

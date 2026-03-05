@@ -72,6 +72,116 @@ function About() {
       </section>
 
       <section>
+        <div className="section-head">
+          <div className="label">Direction</div>
+          <h2>
+            Vision & <span>Mission</span>
+          </h2>
+          <p className="section-subline">
+            We align product strategy and engineering execution to create long-term business value. Our focus is on
+            building technology that is practical, scalable, and aligned with real-world outcomes.
+          </p>
+        </div>
+
+        <div className="vm-grid">
+          <article className="info-card info-card--vision">
+            <div className="card-kicker">North Star</div>
+            <h3>Vision</h3>
+            <p>
+              To become a trusted engineering partner for organizations building modern digital products powered by
+              intelligent software.
+            </p>
+          </article>
+          <article className="info-card info-card--mission">
+            <div className="card-kicker">Execution Model</div>
+            <h3>Mission</h3>
+            <p>
+              To help startups and enterprises deliver reliable AI, web, and cloud solutions faster through strong
+              architecture, transparent collaboration, and measurable impact.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div className="section-head">
+          <div className="label">What we solve</div>
+          <h2>
+            Problems We <span>Solve</span>
+          </h2>
+          <p className="section-subline">
+            We focus on recurring bottlenecks that slow growth, product quality, and decision speed.
+          </p>
+        </div>
+
+        <div className="problem-grid">
+          <article className="info-card problem-card">
+            <div className="problem-index">01</div>
+            <h3>Slow Product Delivery</h3>
+            <p>
+              We streamline engineering workflows and architecture decisions so teams can move from idea to production
+              without costly delays.
+            </p>
+          </article>
+          <article className="info-card problem-card">
+            <div className="problem-index">02</div>
+            <h3>Unscalable Systems</h3>
+            <p>
+              We redesign brittle systems into scalable, maintainable platforms ready for growth in users, data, and
+              business complexity.
+            </p>
+          </article>
+          <article className="info-card problem-card">
+            <div className="problem-index">03</div>
+            <h3>Disconnected Data & AI</h3>
+            <p>
+              We integrate modern AI and analytics into existing workflows so teams can turn raw data into clear,
+              action-ready decisions.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div className="section-head">
+          <div className="label">Our principles</div>
+          <h2>
+            Core <span>Values</span>
+          </h2>
+          <p className="section-subline">
+            The standards we hold internally are the same standards we deliver to clients.
+          </p>
+        </div>
+
+        <div className="values-grid">
+          <article className="value-card">
+            <h3>Ownership & Accountability</h3>
+            <p>We take responsibility from planning to production outcomes.</p>
+          </article>
+          <article className="value-card">
+            <h3>Clarity in Communication</h3>
+            <p>We prioritize transparent updates and direct technical decisions.</p>
+          </article>
+          <article className="value-card">
+            <h3>Engineering Excellence</h3>
+            <p>We deliver clean, scalable systems with maintainable architecture.</p>
+          </article>
+          <article className="value-card">
+            <h3>Security by Design</h3>
+            <p>We build privacy and security controls from the first iteration.</p>
+          </article>
+          <article className="value-card">
+            <h3>Customer-First Thinking</h3>
+            <p>We map every feature to measurable business and user impact.</p>
+          </article>
+          <article className="value-card">
+            <h3>Continuous Improvement</h3>
+            <p>We iterate quickly using feedback, metrics, and retrospectives.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
           <div className="label">The people behind the product</div>
           <h2>

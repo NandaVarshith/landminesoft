@@ -1,0 +1,147 @@
+body.services-body {
+  --bg-main: #070b14;
+  --bg-elevated: #0b1220;
+  --bg-card: #0f172a;
+  --border: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #9ca3af;
+  --brand: #2fbf8f;
+  --glass: rgba(255, 255, 255, 0.04);
+}
+
+body.services-body * {
+  box-sizing: border-box;
+}
+
+body.services-body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(47, 191, 143, 0.08), transparent 60%),
+    linear-gradient(180deg, #070b14, #0b1220);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+body.services-body section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 88px 20px;
+}
+
+body.services-body h1,
+body.services-body h2,
+body.services-body h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+body.services-body h1 span,
+body.services-body h2 span {
+  color: var(--brand);
+}
+
+body.services-body .services-hero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body.services-body .services-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3.6vw, 2.6rem);
+}
+
+body.services-body .services-hero p {
+  max-width: 760px;
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+body.services-body .services-head {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+body.services-body .label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.7rem;
+  color: var(--brand);
+  margin-bottom: 14px;
+}
+
+body.services-body .services-head h2 {
+  margin: 0;
+}
+
+body.services-body .services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body.services-body .service-card {
+  position: relative;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(14, 23, 42, 0.82), rgba(10, 18, 33, 0.66));
+  backdrop-filter: blur(8px);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+body.services-body .service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(47, 191, 143, 0.42);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24);
+}
+
+body.services-body .service-id {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: #8fb3e3;
+  font-family: "Poppins", sans-serif;
+}
+
+body.services-body .service-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.12rem;
+}
+
+body.services-body .service-card p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.68;
+}
+
+@media (max-width: 900px) {
+  body.services-body .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  body.services-body section {
+    padding: 72px 16px;
+  }
+
+  body.services-body .services-hero {
+    min-height: 52vh;
+  }
+
+  body.services-body .services-hero p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  body.services-body .service-card {
+    padding: 18px;
+  }
+}

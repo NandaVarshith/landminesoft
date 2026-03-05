@@ -4,7 +4,7 @@ import './SiteFooter.css';
 
 function SiteFooter() {
   const { pathname } = useLocation();
-  const isDarkFooter = pathname === '/' || pathname === '/about';
+  const isDarkFooter = pathname === '/' || pathname === '/about' || pathname === '/services';
 
   return (
     <footer
