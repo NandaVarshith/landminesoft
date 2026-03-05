@@ -59,6 +59,7 @@
   color: #30486a;
   text-decoration: none;
   font-size: 0.9rem;
+  word-break: break-word;
 }
 
 .site-footer-link {
@@ -215,5 +216,17 @@
 
   .site-footer-bottom {
     text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-footer-inner {
+    width: min(1120px, 95%);
+    padding-inline: 0;
+  }
+
+  .site-footer-social {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

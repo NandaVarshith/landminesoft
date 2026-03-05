@@ -98,6 +98,7 @@
   top: calc(100% + 8px);
   right: 0;
   min-width: 220px;
+  width: min(220px, calc(100vw - 24px));
   padding: 8px;
   border-radius: 14px;
   border: 1px solid var(--hdr-menu-border);
@@ -149,5 +150,11 @@
 
   .about-header-inner {
     min-height: 75px;
+  }
+
+  .about-brand,
+  .about-brand img {
+    width: 64px;
+    height: 64px;
   }
 }

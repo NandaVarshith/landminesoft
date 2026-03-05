@@ -4,7 +4,9 @@ A professional multi-page website for **Landmine Soft**, built with **React**, *
 
 ## Overview
 
-This repository currently contains the frontend application used to power the Landmine Soft marketing website and core public pages.
+The Landmine Soft Website is a modern, responsive multi-page frontend application built using React and Vite. It represents a professional corporate website structure with clearly organized public pages, user interaction flows, and client-side routing using React Router.
+
+The project follows a scalable component-based architecture, ensuring maintainability and clean separation of concerns. It demonstrates best practices in frontend development, including reusable components, structured routing, and production-ready build configuration suitable for static deployment platforms.
 
 ## Tech Stack
 
@@ -110,3 +112,5 @@ From `frontend/package.json`:
 ## License
 
 No license file is currently included in this repository. Add a `LICENSE` file if you intend to open-source the project.
+
+

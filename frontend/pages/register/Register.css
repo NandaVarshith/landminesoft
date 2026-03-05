@@ -185,3 +185,19 @@ body.register-body * {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 560px) {
+  .register-shell {
+    padding: 16px 12px 56px;
+  }
+
+  .register-card {
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  .register-group {
+    border-radius: 12px;
+    padding: 12px;
+  }
+}

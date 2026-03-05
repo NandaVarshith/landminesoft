@@ -325,3 +325,20 @@ body.login-body * {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 560px) {
+  .login-shell {
+    padding: 16px 12px 56px;
+    gap: 12px;
+  }
+
+  .login-side,
+  .login-card {
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  .login-note {
+    margin-bottom: 18px;
+  }
+}

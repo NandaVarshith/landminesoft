@@ -420,3 +420,49 @@ body.get-demo-body .demo-request-form button:hover {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 560px) {
+  body.get-demo-body .get-demo-shell {
+    width: min(1120px, 95%);
+  }
+
+  body.get-demo-body .get-demo-page {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 56px;
+  }
+
+  body.get-demo-body .get-demo-hero {
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  body.get-demo-body .hero-copy p {
+    font-size: 0.97rem;
+    line-height: 1.58;
+  }
+
+  body.get-demo-body .hero-actions {
+    gap: 10px;
+  }
+
+  body.get-demo-body .hero-primary,
+  body.get-demo-body .hero-secondary {
+    width: 100%;
+  }
+
+  body.get-demo-body .demo-card {
+    border-radius: 14px;
+    padding: 16px;
+  }
+
+  body.get-demo-body .demo-top {
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  body.get-demo-body .demo-modal {
+    padding: 14px;
+  }
+}

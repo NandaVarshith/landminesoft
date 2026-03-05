@@ -357,3 +357,40 @@ body.careers-body .apply-form button:hover {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 560px) {
+  body.careers-body .container {
+    width: min(1120px, 95%);
+  }
+
+  body.careers-body .hero {
+    padding: 64px 0 42px;
+  }
+
+  body.careers-body .hero p {
+    font-size: 0.98rem;
+  }
+
+  body.careers-body .roles-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  body.careers-body .roles-track {
+    gap: 12px;
+  }
+
+  body.careers-body .role-card {
+    min-width: min(300px, 84vw);
+    max-width: min(300px, 84vw);
+    padding: 16px;
+  }
+
+  body.careers-body .role-card p {
+    min-height: 0;
+  }
+
+  body.careers-body .apply-modal {
+    padding: 14px;
+  }
+}

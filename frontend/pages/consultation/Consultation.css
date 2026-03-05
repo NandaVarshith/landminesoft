@@ -248,3 +248,28 @@ body.consultation-body .consultation-form button:hover {
     grid-column: auto;
   }
 }
+
+@media (max-width: 560px) {
+  body.consultation-body .consultation-page {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 56px;
+  }
+
+  body.consultation-body .consultation-shell {
+    width: min(1120px, 95%);
+    gap: 14px;
+  }
+
+  body.consultation-body .consultation-intro,
+  body.consultation-body .consultation-card {
+    border-radius: 14px;
+    padding: 16px;
+  }
+
+  body.consultation-body .consultation-intro p,
+  body.consultation-body .consultation-head p {
+    font-size: 0.94rem;
+    line-height: 1.58;
+  }
+}

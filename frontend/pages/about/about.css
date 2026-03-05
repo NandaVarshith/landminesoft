@@ -20,6 +20,7 @@ body.about-body {
     radial-gradient(1200px 600px at 10% -10%, rgba(47, 191, 143, 0.08), transparent 60%),
     linear-gradient(180deg, #070b14, #0b1220);
   color: var(--text-main);
+  overflow-x: hidden;
 }
 
 body.about-body section {
@@ -182,4 +183,36 @@ body.about-body footer {
 
 body.about-body footer span {
   color: var(--brand);
+}
+
+@media (max-width: 760px) {
+  body.about-body section {
+    padding: 72px 16px;
+  }
+
+  body.about-body .hero {
+    min-height: 62vh;
+  }
+
+  body.about-body .hero p {
+    font-size: 0.98rem;
+    line-height: 1.62;
+  }
+
+  body.about-body .team-scroller-wrapper {
+    max-width: 100%;
+  }
+
+  body.about-body .scroll-btn {
+    display: none;
+  }
+
+  body.about-body .team-card {
+    width: min(220px, 74vw) !important;
+  }
+
+  body.about-body .team-card img {
+    width: min(132px, 44vw) !important;
+    height: min(132px, 44vw) !important;
+  }
 }

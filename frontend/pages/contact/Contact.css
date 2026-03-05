@@ -220,4 +220,8 @@ body.contact-body .contact-direct a {
   body.contact-body .contact-card {
     border-radius: 16px;
   }
+
+  body.contact-body .contact-direct {
+    white-space: normal;
+  }
 }

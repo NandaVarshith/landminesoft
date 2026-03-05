@@ -236,3 +236,34 @@ body.support-body .support-footer-note a {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 560px) {
+  body.support-body .support-page {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 56px;
+  }
+
+  body.support-body .support-shell {
+    width: min(1120px, 95%);
+  }
+
+  body.support-body .support-hero {
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  body.support-body .support-hero p {
+    font-size: 0.97rem;
+    line-height: 1.58;
+  }
+
+  body.support-body .support-card {
+    border-radius: 14px;
+    padding: 16px;
+  }
+
+  body.support-body .support-footer-note {
+    word-break: break-word;
+  }
+}
