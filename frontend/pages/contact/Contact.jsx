@@ -45,6 +45,21 @@ function Contact() {
             </p>
           </header>
 
+          <div className="contact-info-grid" aria-label="Company contact details">
+            <article className="contact-info-card">
+              <h2>Email</h2>
+              <a href="mailto:support@landminesoft.com">support@landminesoft.com</a>
+            </article>
+            <article className="contact-info-card">
+              <h2>Phone</h2>
+              <a href="tel:+919059024653">+91-90590-24-653</a>
+            </article>
+            <article className="contact-info-card">
+              <h2>Address</h2>
+              <p>Hyderabad, Telangana 500081, India</p>
+            </article>
+          </div>
+
           <article className="contact-card" aria-label="Contact form">
             <form className="contact-form" noValidate onSubmit={handleSubmit}>
               <div className="field">

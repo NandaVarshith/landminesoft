@@ -5,6 +5,7 @@ import './Register.css';
 
 function Register() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     document.title = 'Create Account | Landmine Soft';
@@ -23,6 +24,14 @@ function Register() {
       form.reportValidity();
       return;
     }
+
+    if (form.password.value !== form.confirmPassword.value) {
+      setSubmitted(false);
+      setError('Password and Confirm Password must match.');
+      return;
+    }
+
+    setError('');
     setSubmitted(true);
   };
 
@@ -58,6 +67,13 @@ function Register() {
                       Password <span aria-hidden="true">*</span>
                     </label>
                     <input id="password" name="password" type="password" required />
+                  </div>
+
+                  <div className="field">
+                    <label htmlFor="confirmPassword">
+                      Confirm Password <span aria-hidden="true">*</span>
+                    </label>
+                    <input id="confirmPassword" name="confirmPassword" type="password" required />
                   </div>
 
                   <div className="field">
@@ -146,6 +162,7 @@ function Register() {
               <button type="submit">Create Account</button>
             </form>
 
+            {error && <p className="register-error">{error}</p>}
             {submitted && (
               <p className="register-success" role="status" aria-live="polite">
                 Account form submitted successfully.

@@ -113,6 +113,35 @@ body.contact-body .contact-card h1 {
   font-weight: 600;
 }
 
+body.contact-body .contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+body.contact-body .contact-info-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff, #f3f7ff);
+  padding: 16px;
+}
+
+body.contact-body .contact-info-card h2 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: #1c3153;
+  font-weight: 600;
+}
+
+body.contact-body .contact-info-card a,
+body.contact-body .contact-info-card p {
+  margin: 0;
+  color: #3f5377;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
 body.contact-body .contact-note {
   margin: 0;
   color: var(--text-muted);
@@ -211,6 +240,10 @@ body.contact-body .contact-direct a {
   body.contact-body .contact-hero {
     grid-template-columns: 1fr;
     border-radius: 16px;
+  }
+
+  body.contact-body .contact-info-grid {
+    grid-template-columns: 1fr;
   }
 
   body.contact-body .contact-form {

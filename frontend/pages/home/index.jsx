@@ -132,6 +132,71 @@ function HomePage() {
         <div className="bubble">Business-First Thinking</div>
       </section>
 
+      <section className="tech-stack-home">
+        <h2>TECHNOLOGIES WE <span>USE</span></h2>
+        <p className="section-subtitle">
+          We choose proven technologies that balance speed, stability, and long-term scalability.
+        </p>
+        <div className="tech-chip-grid">
+          <span className="tech-chip">React</span>
+          <span className="tech-chip">Node.js</span>
+          <span className="tech-chip">Java Spring Boot</span>
+          <span className="tech-chip">Python</span>
+          <span className="tech-chip">PostgreSQL</span>
+          <span className="tech-chip">MongoDB</span>
+          <span className="tech-chip">AWS</span>
+          <span className="tech-chip">Docker</span>
+        </div>
+      </section>
+
+      <section className="highlights-home">
+        <h2>PROJECT <span>HIGHLIGHTS</span></h2>
+        <p className="home-section-lead">
+          A snapshot of solution types we deliver across AI, web, and platform engineering.
+        </p>
+        <div className="highlight-grid">
+          <article className="highlight-card">
+            <span className="highlight-tag">AI Automation</span>
+            <h3>AI Knowledge Assistant</h3>
+            <p>Built an internal RAG assistant that reduced documentation lookup time by 60% for support teams.</p>
+          </article>
+          <article className="highlight-card">
+            <span className="highlight-tag">SaaS Platform</span>
+            <h3>Customer Operations Portal</h3>
+            <p>Delivered a full-stack workflow platform centralizing client requests, approvals, and analytics.</p>
+          </article>
+          <article className="highlight-card">
+            <span className="highlight-tag">Cloud Migration</span>
+            <h3>Cloud Migration Program</h3>
+            <p>Migrated legacy workloads to a secure cloud architecture with CI/CD and observability baseline.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="testimonials-home">
+        <h2>CLIENT <span>TESTIMONIALS</span></h2>
+        <p className="home-section-lead">
+          Feedback from teams we supported across product development and platform modernization.
+        </p>
+        <div className="testimonial-grid">
+          <article className="testimonial-card">
+            <span className="testimonial-stars">★★★★★</span>
+            <p>"Landmine Soft brought structure, speed, and clarity to our platform rebuild."</p>
+            <h4>Head of Product, SaaS Startup</h4>
+          </article>
+          <article className="testimonial-card">
+            <span className="testimonial-stars">★★★★★</span>
+            <p>"Strong engineering ownership and transparent communication from sprint one."</p>
+            <h4>Engineering Manager, Fintech Team</h4>
+          </article>
+          <article className="testimonial-card">
+            <span className="testimonial-stars">★★★★★</span>
+            <p>"They helped us launch faster without compromising architecture quality."</p>
+            <h4>Founder, B2B Platform</h4>
+          </article>
+        </div>
+      </section>
+
       <section className="ready-section">
         <div className="content-wrapper ready-section-inner">
           <h2 style={{ marginBottom: '20px' }}>READY TO <span>GET STARTED</span>?</h2>

@@ -164,6 +164,16 @@ body.register-body * {
   border: 1px solid rgba(5, 150, 105, 0.35);
 }
 
+.register-error {
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: #7f1d1d;
+  background: rgba(239, 68, 68, 0.14);
+  border: 1px solid rgba(185, 28, 28, 0.35);
+}
+
 .register-footer {
   margin-top: 16px;
   color: #3e5276;
